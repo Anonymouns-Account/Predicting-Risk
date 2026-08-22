@@ -1,0 +1,3 @@
+bacteria,feature_set,usable_rows,train_rows,validation_rows,test_rows,test_start,test_end,test_exceedances,test_non_exceedances
+E. coli,expanded_no_tides,865,605,130,130,2023-11-13,2026-05-26,66,64
+Enterococcus,base_no_sso,864,604,130,130,2023-11-13,2026-05-26,33,97

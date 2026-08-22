@@ -1,0 +1,3 @@
+bacteria,model,self_check
+E. coli,Gradient Boosting,PASS
+Enterococcus,Logistic Regression,PASS

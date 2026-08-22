@@ -1,0 +1,3 @@
+bacteria,model,threshold,rows_checked,tn_recomputed,fp_recomputed,fn_recomputed,tp_recomputed,precision_recomputed,recall_recomputed,f1_recomputed,matches_metrics_csv
+E. coli,Gradient Boosting,0.27,130,25,39,4,62,0.6138613861386139,0.9393939393939394,0.7425149700598802,True
+Enterococcus,Logistic Regression,0.63,130,87,10,12,21,0.6774193548387096,0.6363636363636364,0.65625,True

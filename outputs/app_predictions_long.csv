@@ -1,0 +1,3 @@
+site_id,site_name,county,prediction_date,bacteria,probability,risk_level,model_version
+aquatic_park_san_mateo,"Parkside Aquatic Park, San Mateo",San Mateo,2026-05-26,E. coli,0.10845875301050142,Caution,v12
+aquatic_park_san_mateo,"Parkside Aquatic Park, San Mateo",San Mateo,2026-05-26,Enterococcus,0.2824705698789427,Safe,v12

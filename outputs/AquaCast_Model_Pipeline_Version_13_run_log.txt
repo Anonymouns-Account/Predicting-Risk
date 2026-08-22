@@ -1,0 +1,39 @@
+BASE_DIR: /mnt/data
+DATA_PATH: /mnt/data/Aquacast15Years_Weekly.csv
+OUTPUT_DIR: /mnt/data/AquaCast_Model_Pipeline_Version_13_Outputs
+SEED: 42
+DATA_SHA256: 9ed563e9247c649257b1ab0b5c3a1ce453a4aab99c751a9534503110133fbd2a
+Loaded existing weekly dataset.
+Dataset shape: (1848, 64)
+Date range: 2004-09-08 00:00:00 to 2026-05-26 00:00:00
+indicator_clean
+E. coli         934
+Enterococcus    914
+Feature counts: {'base_no_sso': 9, 'expanded_no_tides': 44}
+Training E. coli | Logistic Regression
+Training E. coli | Random Forest
+Training E. coli | Gradient Boosting
+Training Enterococcus | Logistic Regression
+Training Enterococcus | Random Forest
+Training Enterococcus | Gradient Boosting
+Six model metrics:
+    bacteria               model       feature_set  n_features test_start   test_end  threshold  accuracy  precision   recall       f1       f2  false_negative_rate  tn  fp  fn  tp   pr_auc  roc_auc  brier_score
+     E. coli Logistic Regression expanded_no_tides          44 2023-11-13 2026-05-26       0.27  0.630769   0.583333 0.954545 0.724138 0.846774             0.045455  19  45   3  63 0.807702 0.791903     0.189931
+     E. coli       Random Forest expanded_no_tides          44 2023-11-13 2026-05-26       0.27  0.630769   0.586538 0.924242 0.717647 0.828804             0.075758  21  43   5  61 0.797757 0.793087     0.189657
+     E. coli   Gradient Boosting expanded_no_tides          44 2023-11-13 2026-05-26       0.27  0.669231   0.613861 0.939394 0.742515 0.849315             0.060606  25  39   4  62 0.803700 0.779356     0.191120
+Enterococcus Logistic Regression       base_no_sso           9 2023-11-13 2026-05-26       0.63  0.830769   0.677419 0.636364 0.656250 0.644172             0.363636  87  10  12  21 0.700377 0.792252     0.190135
+Enterococcus       Random Forest       base_no_sso           9 2023-11-13 2026-05-26       0.63  0.776923   0.611111 0.333333 0.431373 0.366667             0.666667  90   7  22  11 0.606953 0.781631     0.156675
+Enterococcus   Gradient Boosting       base_no_sso           9 2023-11-13 2026-05-26       0.63  0.807692   0.833333 0.303030 0.444444 0.347222             0.696970  95   2  23  10 0.628517 0.775070     0.144577
+Final selected metrics:
+    bacteria               model       feature_set  n_features test_start   test_end  threshold  accuracy  precision   recall       f1       f2  false_negative_rate  tn  fp  fn  tp   pr_auc  roc_auc  brier_score
+     E. coli   Gradient Boosting expanded_no_tides          44 2023-11-13 2026-05-26       0.27  0.669231   0.613861 0.939394 0.742515 0.849315             0.060606  25  39   4  62 0.803700 0.779356     0.191120
+Enterococcus Logistic Regression       base_no_sso           9 2023-11-13 2026-05-26       0.63  0.830769   0.677419 0.636364 0.656250 0.644172             0.363636  87  10  12  21 0.700377 0.792252     0.190135
+Self-check passed.
+    bacteria               model self_check
+     E. coli   Gradient Boosting       PASS
+Enterococcus Logistic Regression       PASS
+Independent verification:
+    bacteria               model  threshold  rows_checked  tn_recomputed  fp_recomputed  fn_recomputed  tp_recomputed  precision_recomputed  recall_recomputed  f1_recomputed  matches_metrics_csv
+     E. coli   Gradient Boosting       0.27           130             25             39              4             62              0.613861           0.939394       0.742515                 True
+Enterococcus Logistic Regression       0.63           130             87             10             12             21              0.677419           0.636364       0.656250                 True
+Saved ZIP: /mnt/data/AquaCast_Model_Pipeline_Version_13_Outputs.zip
